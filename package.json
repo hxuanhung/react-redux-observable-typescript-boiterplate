@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 4000 --open",
-    "build": "webpack -p --progress --colors"
+    "build": "webpack -p --progress --colors",
+    "tslint": "tslint **/*{.ts, .tsx}",
+    "prepush": "npm run tslint"
   },
   "license": "MIT",
   "devDependencies": {
@@ -45,6 +47,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "firebase": "^4.0.0",
+    "husky": "^0.13.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
