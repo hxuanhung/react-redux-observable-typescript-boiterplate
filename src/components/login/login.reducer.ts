@@ -1,7 +1,8 @@
+import * as types from '../../constants/types';
+
 const initialState = {
-  isLogined: false
+  isLoggedIn: false
 };
-const type = 'LOGIN_COMPLETED';
 // const actionsMap = {
 //   [type](state, action) {
 //     console.log('reducer login completed', action);
@@ -15,8 +16,8 @@ const type = 'LOGIN_COMPLETED';
 // };
 const login = (state = initialState, action) => {
   switch (action.type) {
-    case type:
-      return { isLogined: true };
+    case types.loginCompleted:
+      return { isLoggedIn: true };
 
     default:
       return state;

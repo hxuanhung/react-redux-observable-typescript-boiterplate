@@ -1,6 +1,8 @@
+import * as types from '../../constants/types';
+
 const loginEpic = action$ =>
   action$.ofType('LOGIN').mapTo({
-    type: 'LOGIN_COMPLETED'
+    type: types.loginCompleted
   });
 
 export default loginEpic;

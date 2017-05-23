@@ -17,6 +17,7 @@ export class GithubLogin extends React.Component<GithubLogin.Props, GithubLogin.
 
   handleOnClick = () => {
     console.log('Need to login');
+    this.props.onLogin();
   };
 
   render() {
