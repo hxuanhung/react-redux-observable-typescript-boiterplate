@@ -5,16 +5,13 @@ import { RouteComponentProps } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { actions } from './components/login';
 import { Login } from './components/login';
-
-export interface IProps extends RouteComponentProps<void> {
-  loginActions?: any;
-}
+import { IAppProps } from "./typings/interfaces";
 
 @connect(
   null,
   (dispatch) => ({ loginActions: bindActionCreators(actions as any, dispatch) }),
 )
-class App extends React.Component<IProps, any> {
+class App extends React.Component<IAppProps, any> {
 
   public render() {
     const { loginActions } = this.props;

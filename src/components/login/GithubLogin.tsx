@@ -1,11 +1,8 @@
 import * as React from 'react';
+import { IGithubLoginProps } from "../../typings/interfaces";
 
-export interface IProps {
-  onLogin: any;
-}
-
-export class GithubLogin extends React.Component<IProps, any> {
-  constructor(props?: IProps, context?: any) {
+export class GithubLogin extends React.Component<IGithubLoginProps, any> {
+  constructor(props?: IGithubLoginProps, context?: any) {
     super(props, context);
   }
 

@@ -2,12 +2,8 @@ import { PropTypes } from 'prop-types';
 import * as React from 'react';
 import { GithubLogin } from './GithubLogin';
 
-export interface IProps {
-  login: any;
-}
-
-export class Login extends React.Component<IProps, any> {
-  constructor(props?: IProps, context?: any) {
+export class Login extends React.Component<ILoginProps, any> {
+  constructor(props?: ILoginProps, context?: any) {
     super(props, context);
   }
 
