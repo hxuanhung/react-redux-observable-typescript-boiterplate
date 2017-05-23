@@ -1,28 +1,22 @@
-import * as React from 'react';
-import { bindActionCreators } from 'redux';
 import { PropTypes } from 'prop-types';
+import * as React from 'react';
 import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router';
+import { bindActionCreators } from 'redux';
 import { actions } from './components/login';
 import { Login } from './components/login';
-import { RouteComponentProps } from 'react-router';
 
-export namespace App {
-  export interface Props extends RouteComponentProps<void> {
-    loginActions?: any;
-  }
-
-  export interface State {
-    /* empty */
-  }
+export interface IProps extends RouteComponentProps<void> {
+  loginActions?: any;
 }
+
 @connect(
   null,
-  dispatch => ({
-    loginActions: bindActionCreators(actions as any, dispatch)
-  })
+  (dispatch) => ({ loginActions: bindActionCreators(actions as any, dispatch) }),
 )
-class App extends React.Component<App.Props, App.State> {
-  render() {
+class App extends React.Component<IProps, any> {
+
+  public render() {
     const { loginActions } = this.props;
     return (
       <div className="App">
@@ -37,7 +31,5 @@ class App extends React.Component<App.Props, App.State> {
     );
   }
 }
-
-
 
 export default App;

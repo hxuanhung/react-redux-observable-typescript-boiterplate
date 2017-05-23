@@ -1,27 +1,21 @@
-import * as React from 'react';
 import { PropTypes } from 'prop-types';
+import * as React from 'react';
 import { GithubLogin } from './GithubLogin';
 
-export namespace Login {
-  export interface Props {
-    login: any;
-  }
-
-  export interface State {
-    /* empty */
-  }
+export interface IProps {
+  login: any;
 }
 
-export class Login extends React.Component<Login.Props, Login.State> {
-  constructor(props?: Login.Props, context?: any) {
+export class Login extends React.Component<IProps, any> {
+  constructor(props?: IProps, context?: any) {
     super(props, context);
   }
 
-  handleLogin = () => {
+  public handleLogin = () => {
     this.props.login();
-  };
+  }
 
-  render() {
+  public render() {
     return (
       <div>
         <h1>Login</h1>
@@ -30,4 +24,3 @@ export class Login extends React.Component<Login.Props, Login.State> {
     );
   }
 }
-

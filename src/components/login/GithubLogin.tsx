@@ -1,26 +1,20 @@
 import * as React from 'react';
 
-export namespace GithubLogin {
-  export interface Props {
-    onLogin: any;
-  }
-
-  export interface State {
-    /* empty */
-  }
+export interface IProps {
+  onLogin: any;
 }
 
-export class GithubLogin extends React.Component<GithubLogin.Props, GithubLogin.State> {
-  constructor(props?: GithubLogin.Props, context?: any) {
+export class GithubLogin extends React.Component<IProps, any> {
+  constructor(props?: IProps, context?: any) {
     super(props, context);
   }
 
-  handleOnClick = () => {
+  public handleOnClick = () => {
     console.log('Need to login');
     this.props.onLogin();
-  };
+  }
 
-  render() {
+  public render() {
     return <button onClick={this.handleOnClick}>Github</button>;
   }
 }

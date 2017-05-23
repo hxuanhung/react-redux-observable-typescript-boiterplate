@@ -1,7 +1,7 @@
 import * as types from '../../constants/types';
 
 const initialState = {
-  isLoggedIn: false
+  isLoggedIn: false,
 };
 // const actionsMap = {
 //   [type](state, action) {
