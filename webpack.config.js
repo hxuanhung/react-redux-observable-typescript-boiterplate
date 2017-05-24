@@ -74,6 +74,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         context: sourcePath,
