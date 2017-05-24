@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IGithubLoginProps } from "../../typings/interfaces";
+import { IGithubLoginProps } from '../../typings/interfaces';
 
 export class GithubLogin extends React.Component<IGithubLoginProps, any> {
   constructor(props?: IGithubLoginProps, context?: any) {
@@ -15,4 +15,3 @@ export class GithubLogin extends React.Component<IGithubLoginProps, any> {
     return <button onClick={this.handleOnClick}>Github</button>;
   }
 }
-

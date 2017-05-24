@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import * as React from 'react';
+import { ILoginProps } from '../../typings/interfaces';
 import { GithubLogin } from './GithubLogin';
 
 export class Login extends React.Component<ILoginProps, any> {
