@@ -5,22 +5,18 @@ const loginEpic = (action$) =>
   action$
     .ofType('LOGIN')
     .switchMap(() => {
-      return loginService()
-        .then((result) => {
-          const token = result.credential.accessToken;
-          const user = result.user;
-          console.log(`token`, token);
-          console.log(`user`, user);
-          return {
+      return Observable.fromPromise(loginService())
+        .map((result) => {
+          return Observable.of({
             payload: result,
             type: types.loginCompleted,
-          };
+          });
         })
         .catch((error) => {
-          return {
+          return Observable.of({
             payload: error,
             type: types.loginFailed,
-          };
+          });
         });
     });
 
