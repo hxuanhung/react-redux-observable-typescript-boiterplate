@@ -5,7 +5,7 @@ import { RouteComponentProps } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { actions } from './components/login';
 import { Login } from './components/login';
-import { IAppProps } from "./typings/interfaces";
+import { IAppProps } from './typings/interfaces';
 
 @connect(
   null,
@@ -16,12 +16,12 @@ class App extends React.Component<IAppProps, any> {
   public render() {
     const { loginActions } = this.props;
     return (
-      <div className="App">
+      <div className='App'>
         <Login login={loginActions.login} />
-        <div className="App-header">
-          <h2>Welcomet</h2>
+        <div className='App-header'>
+          <h2>Welcometesd</h2>
         </div>
-        <p className="App-intro">
+        <p className='App-intro'>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
