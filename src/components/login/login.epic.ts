@@ -17,7 +17,6 @@ const loginEpic = (action$) =>
           };
         })
         .catch((error) => {
-          console.log(`come here`, error);
           return {
             payload: error,
             type: types.loginFailed,

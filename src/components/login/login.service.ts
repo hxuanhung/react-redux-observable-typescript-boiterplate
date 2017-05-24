@@ -5,7 +5,6 @@ import * as types from '../../constants/types';
 
 export const login = async (): firebase.Promise<any> => {
   initFirebase();
-  console.log(`come here 1`, firebase);
   const provider = new firebase.auth.GithubAuthProvider();
   provider.addScope(`gist`);
   return await firebase
