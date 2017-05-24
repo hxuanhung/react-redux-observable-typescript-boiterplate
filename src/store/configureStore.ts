@@ -6,7 +6,25 @@ import rootReducer from './reducer';
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
-const store = (): Store<any> =>
-  createStore(rootReducer, composeWithDevTools(applyMiddleware(epicMiddleware)));
+// Ref: https://redux-observable.js.org/docs/recipes/HotModuleReplacement.html
+if (module.hot) {
+  module.hot.accept('./epic', () => {
+    const nextEpic = require('./epic');
+    epicMiddleware.replaceEpic(nextEpic);
+  });
+}
 
-export default store;
+const configureStore = (): Store<any> => {
+
+  const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(epicMiddleware)));
+  if (module.hot) {
+    module.hot.accept('./reducer', () => {
+      const nextReducer = require('./reducer').default;
+      store.replaceReducer(nextReducer);
+    });
+
+    return store;
+  }
+};
+
+export default configureStore;
